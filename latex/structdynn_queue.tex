@@ -1,0 +1,95 @@
+\doxysection{dynn\+Queue Struct Reference}
+\hypertarget{structdynn_queue}{}\label{structdynn_queue}\index{dynnQueue@{dynnQueue}}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structdynn_queue_aa87be28a4a55baaa7127f1a563a1a919}\label{structdynn_queue_aa87be28a4a55baaa7127f1a563a1a919} 
+\mbox{\hyperlink{dynn_queue__module_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries front}
+\item 
+\Hypertarget{structdynn_queue_ab3c954b617e3d393d0cdbe0179f10ed9}\label{structdynn_queue_ab3c954b617e3d393d0cdbe0179f10ed9} 
+\mbox{\hyperlink{dynn_queue__module_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries rear}
+\item 
+\mbox{\hyperlink{dynn_queue__module_8h_a258be8dc3be6e3aa5f7c6e6d0f5f24da}{tf2\+\_\+t}} \mbox{\hyperlink{structdynn_queue_a0811cb2c6b30aa55cef4704a0e8d95c0}{put}}
+\begin{DoxyCompactList}\small\item\em Puts a new item or element in the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\+\_\+t}} \mbox{\hyperlink{structdynn_queue_a84f469044ef7edd4321215503fd60c59}{pop}}
+\begin{DoxyCompactList}\small\item\em pulls an item from the queue \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\+\_\+t}} \mbox{\hyperlink{structdynn_queue_a6dae26c444df8a4e9cf77c591d4e13a7}{peek}}
+\begin{DoxyCompactList}\small\item\em Shows the last item of the queue and it does not pull the last item from the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dynn_queue__module_8h_ac93e81b72ad2b1eede2f1086815cd3b5}{tf4\+\_\+t}} \mbox{\hyperlink{structdynn_queue_a1aa984d1a91c2592f5f7e5fa5c3f0938}{print}}
+\begin{DoxyCompactList}\small\item\em print the queue item \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structdynn_queue_a6dae26c444df8a4e9cf77c591d4e13a7}\index{dynnQueue@{dynnQueue}!peek@{peek}}
+\index{peek@{peek}!dynnQueue@{dynnQueue}}
+\doxysubsubsection{\texorpdfstring{peek}{peek}}
+{\footnotesize\ttfamily \label{structdynn_queue_a6dae26c444df8a4e9cf77c591d4e13a7} 
+\mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\+\_\+t}} peek}
+
+
+
+Shows the last item of the queue and it does not pull the last item from the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dynnQ} & queue instance (dynn\+Queue\+\_\+t) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the queue is empty returns a \doxylink{structq_data__t}{q\+Data\+\_\+t} value with type T\+\_\+\+UNSUPORTED otherwise returns the item value 
+\end{DoxyReturn}
+\Hypertarget{structdynn_queue_a84f469044ef7edd4321215503fd60c59}\index{dynnQueue@{dynnQueue}!pop@{pop}}
+\index{pop@{pop}!dynnQueue@{dynnQueue}}
+\doxysubsubsection{\texorpdfstring{pop}{pop}}
+{\footnotesize\ttfamily \label{structdynn_queue_a84f469044ef7edd4321215503fd60c59} 
+\mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\+\_\+t}} pop}
+
+
+
+pulls an item from the queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dynnQ} & queue instance (dynn\+Queue\+\_\+t) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the queue is empty returns a \doxylink{structq_data__t}{q\+Data\+\_\+t} value with type T\+\_\+\+UNSUPORTED otherwise returns the item value 
+\end{DoxyReturn}
+\Hypertarget{structdynn_queue_a1aa984d1a91c2592f5f7e5fa5c3f0938}\index{dynnQueue@{dynnQueue}!print@{print}}
+\index{print@{print}!dynnQueue@{dynnQueue}}
+\doxysubsubsection{\texorpdfstring{print}{print}}
+{\footnotesize\ttfamily \label{structdynn_queue_a1aa984d1a91c2592f5f7e5fa5c3f0938} 
+\mbox{\hyperlink{dynn_queue__module_8h_ac93e81b72ad2b1eede2f1086815cd3b5}{tf4\+\_\+t}} print}
+
+
+
+print the queue item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & item value which is printed (\doxylink{structq_data__t}{q\+Data\+\_\+t}) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structdynn_queue_a0811cb2c6b30aa55cef4704a0e8d95c0}\index{dynnQueue@{dynnQueue}!put@{put}}
+\index{put@{put}!dynnQueue@{dynnQueue}}
+\doxysubsubsection{\texorpdfstring{put}{put}}
+{\footnotesize\ttfamily \label{structdynn_queue_a0811cb2c6b30aa55cef4704a0e8d95c0} 
+\mbox{\hyperlink{dynn_queue__module_8h_a258be8dc3be6e3aa5f7c6e6d0f5f24da}{tf2\+\_\+t}} put}
+
+
+
+Puts a new item or element in the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dynnQ} & queue instance (dynn\+Queue\+\_\+t) \\
+\hline
+{\em value} & item value (\doxylink{structq_data__t}{q\+Data\+\_\+t}) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dynn_queue__module_8h}{dynn\+Queue\+\_\+module.\+h}}\end{DoxyCompactItemize}

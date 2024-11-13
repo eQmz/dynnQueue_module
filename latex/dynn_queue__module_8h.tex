@@ -1,0 +1,141 @@
+\doxysection{dynn\+Queue\+\_\+module.\+h File Reference}
+\hypertarget{dynn_queue__module_8h}{}\label{dynn_queue__module_8h}\index{dynnQueue\_module.h@{dynnQueue\_module.h}}
+{\ttfamily \#include "{}stdio.\+h"{}}\newline
+{\ttfamily \#include "{}stdint.\+h"{}}\newline
+{\ttfamily \#include "{}string.\+h"{}}\newline
+{\ttfamily \#include "{}stdlib.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionvar_data__t}{var\+Data\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em This is the union definition to create a data variable to support different data types. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structq_data__t}{q\+Data\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em This is the struct definition to define the type of item data for the queue. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\item 
+struct \mbox{\hyperlink{structdynn_queue}{dynn\+Queue}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dynn_queue__module_8h_ac7bb6e40a931d72687f74c9391c7a6fa}\label{dynn_queue__module_8h_ac7bb6e40a931d72687f74c9391c7a6fa} 
+\#define {\bfseries SIZE\+\_\+\+STR}~10
+\begin{DoxyCompactList}\small\item\em This MACRO is the size of array type char. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}\label{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e} 
+typedef struct \mbox{\hyperlink{structdynn_queue}{dynn\+Queue}} {\bfseries dynn\+Queue\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This is the dynamic queue typedef. \end{DoxyCompactList}\item 
+\Hypertarget{dynn_queue__module_8h_a7c02633e18d6aa5f58539b75f08753d9}\label{dynn_queue__module_8h_a7c02633e18d6aa5f58539b75f08753d9} 
+typedef struct \mbox{\hyperlink{structnode}{node}} {\bfseries node\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This is the node queue typedef. \end{DoxyCompactList}\item 
+\Hypertarget{dynn_queue__module_8h_a0cce066308095a2f40ecc91e9a7411c2}\label{dynn_queue__module_8h_a0cce066308095a2f40ecc91e9a7411c2} 
+typedef void(\texorpdfstring{$\ast$}{*} {\bfseries tf0\+\_\+t}) (\mbox{\hyperlink{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}{dynn\+Queue\+\_\+t}} \texorpdfstring{$\ast$}{*}dynnQ)
+\begin{DoxyCompactList}\small\item\em This is the definition for a function pointer with Cola\+\_\+t parameter and return of void type. \end{DoxyCompactList}\item 
+\Hypertarget{dynn_queue__module_8h_a40544eeb21524c486bc0581403f618ee}\label{dynn_queue__module_8h_a40544eeb21524c486bc0581403f618ee} 
+typedef int(\texorpdfstring{$\ast$}{*} {\bfseries tf1\+\_\+t}) (\mbox{\hyperlink{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}{dynn\+Queue\+\_\+t}} \texorpdfstring{$\ast$}{*}dynnQ)
+\begin{DoxyCompactList}\small\item\em This is the definition for a function pointer with Cola\+\_\+t parameter and return of int type. \end{DoxyCompactList}\item 
+\Hypertarget{dynn_queue__module_8h_a258be8dc3be6e3aa5f7c6e6d0f5f24da}\label{dynn_queue__module_8h_a258be8dc3be6e3aa5f7c6e6d0f5f24da} 
+typedef void(\texorpdfstring{$\ast$}{*} {\bfseries tf2\+\_\+t}) (\mbox{\hyperlink{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}{dynn\+Queue\+\_\+t}} \texorpdfstring{$\ast$}{*}dynnQ, \mbox{\hyperlink{structq_data__t}{q\+Data\+\_\+t}} value)
+\begin{DoxyCompactList}\small\item\em This is the definition for a function pointer with Cola\+\_\+t and \doxylink{structq_data__t}{q\+Data\+\_\+t} parameters and return of int type. \end{DoxyCompactList}\item 
+\Hypertarget{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}\label{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994} 
+typedef \mbox{\hyperlink{structq_data__t}{q\+Data\+\_\+t}}(\texorpdfstring{$\ast$}{*} {\bfseries tf3\+\_\+t}) (\mbox{\hyperlink{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}{dynn\+Queue\+\_\+t}} \texorpdfstring{$\ast$}{*}dynnQ)
+\begin{DoxyCompactList}\small\item\em This is the definition for a function pointer with Cola\+\_\+t parameter and return of \doxylink{structq_data__t}{q\+Data\+\_\+t} type. \end{DoxyCompactList}\item 
+\Hypertarget{dynn_queue__module_8h_ac93e81b72ad2b1eede2f1086815cd3b5}\label{dynn_queue__module_8h_ac93e81b72ad2b1eede2f1086815cd3b5} 
+typedef void(\texorpdfstring{$\ast$}{*} {\bfseries tf4\+\_\+t}) (\mbox{\hyperlink{structq_data__t}{q\+Data\+\_\+t}} item)
+\begin{DoxyCompactList}\small\item\em This is the definition for a function pointer with Cola\+\_\+t parameter and return of void type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dynn_queue__module_8h_a1bfc0393b8b8aa78818f175bc039bc5a}\label{dynn_queue__module_8h_a1bfc0393b8b8aa78818f175bc039bc5a} 
+enum \mbox{\hyperlink{dynn_queue__module_8h_a1bfc0393b8b8aa78818f175bc039bc5a}{type\+Data\+\_\+t}} \{ \newline
+{\bfseries T\+\_\+\+INT}
+, {\bfseries T\+\_\+\+CHAR}
+, {\bfseries T\+\_\+\+FLOAT}
+, {\bfseries T\+\_\+\+U8T}
+, \newline
+{\bfseries T\+\_\+\+U16T}
+, {\bfseries T\+\_\+\+U32T}
+, {\bfseries T\+\_\+\+STRING}
+, {\bfseries T\+\_\+\+UNSUPPORTED}
+ \}
+\begin{DoxyCompactList}\small\item\em This is the types enum definition for identify each item in the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}{dynn\+Queue\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{dynn_queue__module_8h_a303cbca7d57572ed8d0e55e8e5e6de5c}{create\+\_\+dynn\+Queue}} (void)
+\begin{DoxyCompactList}\small\item\em this function create and initializes a dynamic queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+EM2 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/13
+\end{DoxyDate}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dynn_queue__module_8h}{dynnQueue\_module.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *myQueue\ =\ create\_dynnQueue();}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structq_data__t}{qData\_t}}\ item[6]\ =\ \{\{.data.i\ =\ 7,\ .type\ =\ T\_INT\},\ \{.data.c\ =\ \textcolor{charliteral}{'Q'},\ .type\ =\ T\_CHAR\},\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{.data.f\ =\ 10.7,\ .type\ =\ T\_FLOAT\},\ \{.data.u8\ =\ 254,\ .type\ =\ T\_U8T\},\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{.data.str\ =\ \textcolor{stringliteral}{"{}hola"{}},\ .type\ =\ T\_STRING\},\ \ \{.data.u16\ =\ 1024,\ .type\ =\ T\_U16T\}\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ myQueue-\/>\mbox{\hyperlink{structdynn_queue_a0811cb2c6b30aa55cef4704a0e8d95c0}{put}}(myQueue,\ item[i]);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Peek:\ "{}}\ );}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ myQueue-\/>\mbox{\hyperlink{structdynn_queue_a1aa984d1a91c2592f5f7e5fa5c3f0938}{print}}(myQueue-\/>\mbox{\hyperlink{structdynn_queue_a6dae26c444df8a4e9cf77c591d4e13a7}{peek}}(myQueue));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Dequeued:\ "{}}\ );}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ myQueue-\/>\mbox{\hyperlink{structdynn_queue_a1aa984d1a91c2592f5f7e5fa5c3f0938}{print}}(myQueue-\/>\mbox{\hyperlink{structdynn_queue_a84f469044ef7edd4321215503fd60c59}{pop}}(myQueue));}
+\DoxyCodeLine{\ \ \ \ \}\ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Output}
+\DoxyCodeLine{Peek:\ 7}
+\DoxyCodeLine{Dequeued:\ 7}
+\DoxyCodeLine{Peek:\ Q}
+\DoxyCodeLine{Dequeued:\ Q}
+\DoxyCodeLine{Peek:\ 10.70}
+\DoxyCodeLine{Dequeued:\ 10.70}
+\DoxyCodeLine{Peek:\ 254}
+\DoxyCodeLine{Dequeued:\ 254}
+\DoxyCodeLine{Peek:\ hola}
+\DoxyCodeLine{Dequeued:\ hola}
+\DoxyCodeLine{Peek:\ 1024}
+\DoxyCodeLine{Dequeued:\ 1024}
+
+\end{DoxyCode}
+ \begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dynn_queue__module_8h_a303cbca7d57572ed8d0e55e8e5e6de5c}\index{dynnQueue\_module.h@{dynnQueue\_module.h}!create\_dynnQueue@{create\_dynnQueue}}
+\index{create\_dynnQueue@{create\_dynnQueue}!dynnQueue\_module.h@{dynnQueue\_module.h}}
+\doxysubsubsection{\texorpdfstring{create\_dynnQueue()}{create\_dynnQueue()}}
+{\footnotesize\ttfamily \label{dynn_queue__module_8h_a303cbca7d57572ed8d0e55e8e5e6de5c} 
+\mbox{\hyperlink{dynn_queue__module_8h_a4f16fd6e8709dff4c78cafcfd29ad62e}{dynn\+Queue\+\_\+t}} \texorpdfstring{$\ast$}{*} create\+\_\+dynn\+Queue (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+this function create and initializes a dynamic queue 
+
+\begin{DoxyReturn}{Returns}
+dynn\+Queue\+\_\+t\texorpdfstring{$\ast$}{*} return a pointer to the created queue 
+\end{DoxyReturn}

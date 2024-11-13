@@ -1,0 +1,135 @@
+\chapter{QUEUE\+\_\+\+MODULE}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{QUEUE\_MODULE@{QUEUE\_MODULE}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+This project is a library (dynn\+Queue\+\_\+module.\+c/h files) which helps to generate a basic dynamic queue wich can allocate different types of items.
+
+The project purpose is to give an example or a base for a general queue where the user adds more type of elements at his convenience, e. g., an structure array.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Example main.\+c code}{Example main.\+c code}}\label{md__r_e_a_d_m_e_autotoc_md1}
+The next code is an example of how the library can work\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ "{}dynnQueue\_module.h"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main(int\ argc,\ char\ const\ *argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ dynnQueue\_t\ *myQueue\ =\ create\_dynnQueue();}
+\DoxyCodeLine{\ \ \ }
+\DoxyCodeLine{\ \ \ qData\_t\ item[6]\ =\ \{\{.data.i\ =\ 7,\ .type\ =\ T\_INT\},\ \{.data.c\ =\ 'Q',\ .type\ =\ T\_CHAR\},\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \{.data.f\ =\ 10.7,\ .type\ =\ T\_FLOAT\},\ \{.data.u8\ =\ 254,\ .type\ =\ T\_U8T\},\(\backslash\)}
+\DoxyCodeLine{\ \ \ \{.data.str\ =\ "{}hola"{},\ .type\ =\ T\_STRING\},\ \ \{.data.u16\ =\ 1024,\ .type\ =\ T\_U16T\}\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ for(int\ i\ =\ 0;\ i\ <\ 6;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ myQueue-\/>put(myQueue,\ item[i]);}
+\DoxyCodeLine{\ \ \ }
+\DoxyCodeLine{\ \ \ for(int\ i\ =\ 0;\ i\ <\ 6;\ i++)}
+\DoxyCodeLine{\ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ printf("{}Peek:\ "{}\ );}
+\DoxyCodeLine{\ \ \ \ \ \ myQueue-\/>print(myQueue-\/>peek(myQueue));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ printf("{}Dequeued:\ "{}\ );}
+\DoxyCodeLine{\ \ \ \ \ \ myQueue-\/>print(myQueue-\/>pop(myQueue));}
+\DoxyCodeLine{\ \ \ \}\ }
+\DoxyCodeLine{\ \ \ }
+\DoxyCodeLine{\ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Create a queue instance 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dynnQueue\_t\ *myQueue\ =\ create\_dynnQueue();}
+
+\end{DoxyCode}
+
+\item Create a variable of type \doxylink{structq_data__t}{q\+Data\+\_\+t} and set values, for instance\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{qData\_t\ item[6]\ =\ \{\{.data.i\ =\ 7,\ .type\ =\ T\_INT\},\ \{.data.c\ =\ 'Q',\ .type\ =\ T\_CHAR\},\ \(\backslash\)}
+\DoxyCodeLine{\{.data.f\ =\ 10.7,\ .type\ =\ T\_FLOAT\},\ \{.data.u8\ =\ 254,\ .type\ =\ T\_U8T\},\(\backslash\)}
+\DoxyCodeLine{\{.data.str\ =\ "{}hola"{},\ .type\ =\ T\_STRING\},\ \ \{.data.u16\ =\ 1024,\ .type\ =\ T\_U16T\}\};}
+
+\end{DoxyCode}
+
+\item Use the put method to enqueue elements 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myQueue-\/>put(myQueue,\ item[i]);}
+
+\end{DoxyCode}
+
+\item Use pop method to extract the next element (you can create another \doxylink{structq_data__t}{q\+Data\+\_\+t} variable to allocate the item data). On the other hand, you can use the function print method to print the value of that item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{qData\_t\ next\_item\ =\ myQueue-\/>pop(myQueue);}
+\DoxyCodeLine{print\_queue(next\_item);}
+
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myQueue-\/>print(myQueue-\/>pop(myQueue));}
+
+\end{DoxyCode}
+
+\item Similarily, you can use the peek method even the pop method to see the next item on the queue 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{myQueue-\/>print(myQueue-\/>peek(myQueue));}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+{\bfseries{Example output\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Peek:\ 7}
+\DoxyCodeLine{Dequeued:\ 7}
+\DoxyCodeLine{Peek:\ Q}
+\DoxyCodeLine{Dequeued:\ Q}
+\DoxyCodeLine{Peek:\ 10.70}
+\DoxyCodeLine{Dequeued:\ 10.70}
+\DoxyCodeLine{Peek:\ 254}
+\DoxyCodeLine{Dequeued:\ 254}
+\DoxyCodeLine{Peek:\ hola}
+\DoxyCodeLine{Dequeued:\ hola}
+\DoxyCodeLine{Peek:\ 1024}
+\DoxyCodeLine{Dequeued:\ 1024}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Compilation}{Compilation}}\label{md__r_e_a_d_m_e_autotoc_md2}
+First you have to download the library (or you can clone or add to your project as a submodule). The library location in your workspace should look as follows\+:
+
+
+
+Then, the next step for compilation it can be realized using the next gcc command on the terminal\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gcc\ -\/g\ main.c\ dynnQueue\_module/dynnQueue\_module.c\ -\/I\ dynnQueue\_module\ -\/o\ main.exe}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Execution}{Execution}}\label{md__r_e_a_d_m_e_autotoc_md3}
+To excecute the main.\+exe file you can use the next command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.\(\backslash\)main.exe}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Message}{Message}}\label{md__r_e_a_d_m_e_autotoc_md4}
+I hope you enjoy with this code, I know there are many ways to learn the concept of a queue but I hope this example helps you. Remember, a basic dynamic queue have three principal functions\+:
+\begin{DoxyEnumerate}
+\item create the queue
+\item enqueue or put elements,
+\item dequeue or pop elements
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item and optional shows the queue peek.
+\end{DoxyItemize}
+
+And remember to use
+
+👍"{}\+Hello Dog! 🐶"{}
+
+Instead
+
+✖️"{}\+Hello World!"{}
+
+ 

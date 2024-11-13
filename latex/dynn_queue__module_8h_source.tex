@@ -1,0 +1,88 @@
+\doxysection{dynn\+Queue\+\_\+module.\+h}
+\hypertarget{dynn_queue__module_8h_source}{}\label{dynn_queue__module_8h_source}\mbox{\hyperlink{dynn_queue__module_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DYNNQUEUE\_MODULE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DYNNQUEUE\_MODULE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}stdio.h"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}stdint.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}string.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}stdlib.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ SIZE\_STR\ 10\ }}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ T\_INT,}
+\DoxyCodeLine{00071\ \ \ \ \ T\_CHAR,}
+\DoxyCodeLine{00072\ \ \ \ \ T\_FLOAT,}
+\DoxyCodeLine{00073\ \ \ \ \ T\_U8T,}
+\DoxyCodeLine{00074\ \ \ \ \ T\_U16T,}
+\DoxyCodeLine{00075\ \ \ \ \ T\_U32T,}
+\DoxyCodeLine{00076\ \ \ \ \ T\_STRING,}
+\DoxyCodeLine{00077\ \ \ \ \ T\_UNSUPPORTED}
+\DoxyCodeLine{00078\ \}\mbox{\hyperlink{dynn_queue__module_8h_a1bfc0393b8b8aa78818f175bc039bc5a}{typeData\_t}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{char}\ c;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{float}\ f;}
+\DoxyCodeLine{00088\ \ \ \ \ uint8\_t\ u8;}
+\DoxyCodeLine{00089\ \ \ \ \ uint16\_t\ u16;}
+\DoxyCodeLine{00090\ \ \ \ \ uint32\_t\ u32;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{char}\ str[\mbox{\hyperlink{dynn_queue__module_8h_ac7bb6e40a931d72687f74c9391c7a6fa}{SIZE\_STR}}];}
+\DoxyCodeLine{00092\ \}\mbox{\hyperlink{unionvar_data__t}{varData\_t}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{dynn_queue__module_8h_a1bfc0393b8b8aa78818f175bc039bc5a}{typeData\_t}}\ \mbox{\hyperlink{structq_data__t_aeb69f1560fba7545fdd3a037b92b4627}{type}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{unionvar_data__t}{varData\_t}}\ \mbox{\hyperlink{structq_data__t_afff6d09d3964b2f85d97fd3689767748}{data}};}
+\DoxyCodeLine{00111\ \}\mbox{\hyperlink{structq_data__t}{qData\_t}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdynn_queue}{dynnQueue}}\ \mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode}{node}}\ \mbox{\hyperlink{structnode}{node\_t}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{typedef}\ void(*\ \mbox{\hyperlink{dynn_queue__module_8h_a0cce066308095a2f40ecc91e9a7411c2}{tf0\_t}})(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{typedef}\ int(*\ \mbox{\hyperlink{dynn_queue__module_8h_a40544eeb21524c486bc0581403f618ee}{tf1\_t}})(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{typedef}\ void(*\ \mbox{\hyperlink{dynn_queue__module_8h_a258be8dc3be6e3aa5f7c6e6d0f5f24da}{tf2\_t}})(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ,\ \mbox{\hyperlink{structq_data__t}{qData\_t}}\ value);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structq_data__t}{qData\_t}}(*\ \mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\_t}})(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{typedef}\ void(*\ \mbox{\hyperlink{dynn_queue__module_8h_ac93e81b72ad2b1eede2f1086815cd3b5}{tf4\_t}})(\mbox{\hyperlink{structq_data__t}{qData\_t}}\ \mbox{\hyperlink{structnode_a76a316661737bf7e5680dcdd6ff07b62}{item}});}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode}{node}}\ }
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{structnode}{node\_t}}\ *\mbox{\hyperlink{structnode_a0f1e087c807aed7b8213ac25a600993b}{Next}};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{structq_data__t}{qData\_t}}\ \mbox{\hyperlink{structnode_a76a316661737bf7e5680dcdd6ff07b62}{item}};}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdynn_queue}{dynnQueue}}}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{structnode}{node\_t}}\ *front;}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{structnode}{node\_t}}\ *rear;}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{dynn_queue__module_8h_a258be8dc3be6e3aa5f7c6e6d0f5f24da}{tf2\_t}}\ \mbox{\hyperlink{structdynn_queue_a0811cb2c6b30aa55cef4704a0e8d95c0}{put}};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\_t}}\ \mbox{\hyperlink{structdynn_queue_a84f469044ef7edd4321215503fd60c59}{pop}};}
+\DoxyCodeLine{00191\ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{dynn_queue__module_8h_a1827f4fdb90be192f08903ebdb199994}{tf3\_t}}\ \mbox{\hyperlink{structdynn_queue_a6dae26c444df8a4e9cf77c591d4e13a7}{peek}};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{dynn_queue__module_8h_ac93e81b72ad2b1eede2f1086815cd3b5}{tf4\_t}}\ \mbox{\hyperlink{structdynn_queue_a1aa984d1a91c2592f5f7e5fa5c3f0938}{print}};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00213\ \mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *\mbox{\hyperlink{dynn_queue__module_8h_a303cbca7d57572ed8d0e55e8e5e6de5c}{create\_dynnQueue}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_put\_(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ,\ \mbox{\hyperlink{structq_data__t}{qData\_t}}\ value);}
+\DoxyCodeLine{00216\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structq_data__t}{qData\_t}}\ \_pop\_(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ);}
+\DoxyCodeLine{00217\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structq_data__t}{qData\_t}}\ \_peek\_(\mbox{\hyperlink{structdynn_queue}{dynnQueue\_t}}\ *dynnQ);}
+\DoxyCodeLine{00218\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_print\_(\mbox{\hyperlink{structq_data__t}{qData\_t}}\ data);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\_DYNNQUEUE\_MODULE\_H\ }}
+
+\end{DoxyCode}
